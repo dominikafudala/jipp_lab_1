@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -17,19 +18,7 @@ int main(int argc, char *argv[])
         numbers.push_back(num); // adding numbers to vector
     } 
 
-	for (int i = 1; i < numbers.size(); i++) // loop for sorting
-	{
-        int count = 0;
-		int x = numbers[i];
-		int j = i - 1;
-		while (j >= 0 && numbers[j] > x)
-		{
-			numbers[j + 1] = numbers[j];
-			j--;
-			count++;
-		}
-		numbers[j + 1] = x;
-	}
+	sort(numbers.begin(), numbers.end());
 
      for(int i = 0; i < numbers.size(); i++) {
         cout<<numbers[i]<<" ";
